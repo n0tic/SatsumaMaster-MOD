@@ -1,0 +1,90 @@
+﻿https://www.racedepartment.com/downloads/satsuma-master.27554/
+
+Satsuma Master 1.6 (Stable)
+
+- Fixed MSCLoader check so that the mod will only work if a compatable MSCLoader is installed and the setup was successful.
+- Added messages to the console upon loading and setting up the mod. (Debugging purposes.)
+- Removed unused code and optimized usage of code-blocks.
+- Added teleport location for the player to teleport to the car.
+
+Satsuma Master 1.5.1 (Stable)
+
+- Fixing variables "UseAssetsFolder" & "LoadInMenu".
+
+Satsuma Master 1.5 (Stable)
+
+- Added more SFX to the mod.
+	* 7 totaly new BovSounds (I plan to equalized volume)
+- Added another control panel for SFX (Sound)
+	* Added more control features for sounds.
+		- Added Volume control feature.
+		- Switch SFX BovSound audio file (Use the one you find most enjoyable)
+* Fixed a bug where the car would reset some settings set by the mod upon stall of the engine.
+* Fixed auto reverse bug.
+- Added a control panel for teleportation.
+	- Added Car teleportation.
+	- Added Player teleportation
+		* Fixed a bug where the player could teleport while in drive mode using the satsuma.
+* Fixed a bug where the automatic transmission would automaticly set drive to reverse.
+
+Issues that I'm aware of:
+	Upon stalling the engine some settings will be reset by the game. (Simply turn a feature OFF and ON again to fix for now.)
+	You can still use the teleport feature while in drive mode on other vehicles. Dont do it.
+
+Satsuma Master 1.4 (Stable)
+
+NOTE: This update comes with a completely new and revamped Satsuma Master!
+
+- Added AssetBundles to the mod.
+  ~ This is an optimization to the overhaul!
+	* Assetbundle comes with:
+		- New Unity UI;
+		- BovSound AudioSource;
+		- BovSound Audio file;
+- Removed legacy UI. (Picked up resource draining..)
+- Added new Unity UI to give it a face-lift and further optimization!
+	* New UI comes with 2 panels and a lot of buttons!
+		- 1# Panel is the controller
+		- 2# Panel comes with status, wear and other information!
+- Optimized Engine Fixer feature even further!
+	* It can be activated at all times ~ (Feedback required!)
+	* It now fixes all parts once it gets activated and repair a part if it goes bellow 30% health.
+	* Added engine temperature limiter ~ Engine do not go above 83C
+- Optimized Boost Power feature!
+	* Optimized previous fix for the boost feature.
+- Added BovSound to the mod!
+	* Optimized BovSound
+	* BovSound now uses it's own AudioSource (Doesnt get canceled once car breaks)
+	* BovSound now loads the clip from within the AssetBundle. (Optimization)
+- Seperated ESP and ABS (Safety) button in to two buttons on the new UI
+- Changed EightGears to SixGears. (Game has added a limiter which I can no longer bypass)
+- Added Suspension locker. (Suspends the suspension so that we can have some fun with the suspension etc)
+- Added Suspension alter. (Suspension can be lowered and made heigher. Wheels can also be widened or reduced.)
+- Added Camber settings for the wheels.
+- Removed Numpad - and Numpad + keys to change boost. (Feedback required!)
+
+Satsuma Master 1.3 (Stable)
+
+- Fixed a bug causing boost power to force engine on.
+
+Satsuma Master 1.2 (Stable)
+
+- Removed External Multiplier (Caused more tire slip)
+- Optimized Engine Fixer feature (Should now require MUCH less resources. It can now be active at all times. May cause stutter though)
+- Optimized Boost Power feature
+* Fixed a bug in Boost power. (Car wont turn off/cant be turned off after a crash. Bug from previous MSMM mod)
+- Optimized Safety Controller feature
+- Optimized Update() & FixedUpdate() code.
+- Re-designed UI to work with optimization.
+
+Known bugs from previous version: 
+Sometimes the game has a problem with the 8th gearbox. Or even six for that matter.
+This may result in some wierd gearbox problems. (States you are using N-eutral gear, but you're not.)
+
+Satsuma Master 1.0 (Stable)
+
+- Updated to version MSCLoader v1.0.1 & game version 24.10.2018
+- Optimized previous outdated code from MySummerMultiMod (MSMM)
+- Added new features and removed some from the outdated sources (MySummerMultiMod (MSMM))
+- Added keybinds in last minute before release. Numpad - and + key control boost.
+- Fixed an issue causing the game to crash.
