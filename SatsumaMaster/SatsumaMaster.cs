@@ -69,8 +69,17 @@ namespace SatsumaMaster
                     _satsuma = GameObject.Find("SATSUMA(557kg, 248)");
                     player = GameObject.Find("PLAYER");
 
-                    // Called once, when mod is loading after game is fully loaded
-                    AssetBundle ab = LoadAssets.LoadBundle(this, "satsumamaster.unity3d");
+                    AssetBundle ab;
+
+                    try
+                    {
+                        ab = LoadAssets.LoadBundle(this, "satsumamaster.unity3d");
+                    }
+                    catch (Exception)
+                    {
+                        ModConsole.Error("You have not installed this mod correctly. Please copy all files from the downloaded archive. Missing Assets/Satsuma Master/satsumamaster.unity3d file.");
+                        return;
+                    }
 
                     uiHandler = new UIHandler(this, ab);
 
@@ -113,10 +122,12 @@ namespace SatsumaMaster
                 }
                 catch (Exception e)
                 {
-                    ModConsole.Error("Asset load and setup failed.");
+                    ModConsole.Error("Asset load and setup failed. Message: " + e);
                     return;
                 }
             }
+            else
+                ModConsole.Error("Wrong version of MSCLoader detected. MSCLoader 1.1.4 is supported. If MSCLoader has been updated, contact the mod author.");
         }
         
         void SetupGradient()
@@ -137,15 +148,6 @@ namespace SatsumaMaster
             gradient.SetKeys(colorKey, alphaKey);
         }
 
-        /*
-         * Apparently I cant change the values inside EngineBoost from Update function. This worked though!
-         */
-        public override void FixedUpdate()
-        {
-            if (versionOK && setupOK)
-                EngineBoost(boost);
-        }
-
         void EngineBoost(bool state)
         {
             if (state)
@@ -153,6 +155,15 @@ namespace SatsumaMaster
                     _satsumaDriveTrain.powerMultiplier = powerMultiplier;
                 else
                     _satsumaDriveTrain.powerMultiplier = 1f;
+        }
+
+        /*
+         * Apparently I cant change the values inside EngineBoost from Update function. This worked though!
+         */
+        public override void FixedUpdate()
+        {
+            if (versionOK && setupOK)
+                EngineBoost(boost);
         }
 
         public override void Update()

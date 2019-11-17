@@ -12,9 +12,6 @@ namespace SatsumaMaster
     {
         SatsumaMaster modParent;
 
-        //Setup assets
-        AssetBundle ab;
-
         //Mod UI
         public GameObject rootUI;
         public GameObject statsPanel, sfxPanel, teleportPanel;
@@ -31,7 +28,8 @@ namespace SatsumaMaster
 
             try
             {
-                GameObject UI = assets.LoadAsset("SatsumaMastser.prefab") as GameObject;
+                GameObject UI = assets.LoadAsset("SatsumaMaster.prefab") as GameObject;
+
                 rootUI = GameObject.Instantiate(UI);
 
                 statsPanel = GameObject.Find("StatsPanel");
@@ -163,6 +161,18 @@ namespace SatsumaMaster
             catch (Exception)
             {
                 ModConsole.Error("UIHandler failed setup.");
+            }
+        }
+
+        public void ShowUI()
+        {
+            if (rootUI.activeSelf)
+            {
+                rootUI.SetActive(false);
+            }
+            else
+            {
+                rootUI.SetActive(true);
             }
         }
 
@@ -328,18 +338,6 @@ namespace SatsumaMaster
                 absButton.transform.GetChild(0).GetComponent<Text>().text = "[ON] ABS";
             else
                 absButton.transform.GetChild(0).GetComponent<Text>().text = "[OFF] ABS";
-        }
-
-        public void ShowUI()
-        {
-            if (rootUI.activeSelf)
-            {
-                rootUI.SetActive(false);
-            }
-            else
-            {
-                rootUI.SetActive(true);
-            }
         }
 
         void ChangeBovVolume(float value)
