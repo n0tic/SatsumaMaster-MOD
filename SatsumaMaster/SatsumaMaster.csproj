@@ -67,6 +67,21 @@
     <Content Include="Changelog_SatsumaMaster.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Unity 5 UI Project Files\Sounds\1.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\2.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\3.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\4.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\5.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\6.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\7.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\BOV.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\SpoolSound.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\SpoolSound2.wav" />
+    <Content Include="Unity 5 UI Project Files\Sounds\turbo.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Unity 5 UI Project Files\BovSound.prefab" />
+    <None Include="Unity 5 UI Project Files\SatsumaMaster.prefab" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

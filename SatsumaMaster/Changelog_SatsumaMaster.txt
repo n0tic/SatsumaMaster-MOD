@@ -5,7 +5,9 @@ Satsuma Master 1.6 (Stable)
 - Fixed MSCLoader check so that the mod will only work if a compatable MSCLoader is installed and the setup was successful.
 - Added messages to the console upon loading and setting up the mod. (Debugging purposes.)
 - Removed unused code and optimized usage of code-blocks.
-- Added teleport location for the player to teleport to the car.
+- "Segmented"/Seperated mods in source code.
+
+Uploaded source to Github. Entire Satsuma Master project.
 
 Satsuma Master 1.5.1 (Stable)
 
