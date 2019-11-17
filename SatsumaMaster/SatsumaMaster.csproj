@@ -54,8 +54,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EngineFixer.cs" />
     <Compile Include="SatsumaMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SixGears.cs" />
+    <Compile Include="SoundController.cs" />
+    <Compile Include="SuspensionWheelController.cs" />
+    <Compile Include="Teleport.cs" />
+    <Compile Include="UIHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changelog_SatsumaMaster.txt">
