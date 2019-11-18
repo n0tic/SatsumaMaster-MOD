@@ -6,6 +6,8 @@ Satsuma Master 1.6 (Stable)
 - Added messages to the console upon loading and setting up the mod. (Debugging purposes.)
 - Removed unused code and optimized usage of code-blocks.
 - "Segmented"/Seperated mods in source code.
+- Added Error message to suspension buttons if a user press them without having the suspension locked.
+	* I've seen that people don't understand that they need to lock it to use it.
 
 Uploaded source to Github. Entire Satsuma Master project.
 

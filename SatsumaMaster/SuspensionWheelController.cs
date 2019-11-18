@@ -18,6 +18,7 @@ namespace SatsumaMaster
         public float WheelYPosition, WheelXPosition;
         private Vector4 WheelStartYPositions, WheelStartXPositions;
         private float originalFrontWheelYPos, originalFrontWheelXPos, originalRearWheelYPos, originalRearWheelXPos, originalFrontCamber, originalRearCamber;
+        PlayMakerFSM suspensionStatus;
 
         public SuspensionWheelController(SatsumaMaster _modParent)
         {
@@ -47,6 +48,16 @@ namespace SatsumaMaster
                     WheelStartXPositions = new Vector4(WHEELFR.transform.localPosition.x, WHEELFL.transform.localPosition.x, WHEELRR.transform.localPosition.x, WHEELRL.transform.localPosition.x);
                     modParent.enableWheelMod = true;
                 }
+
+                PlayMakerFSM[] componentsInChildren = modParent._satsuma.GetComponentsInChildren<PlayMakerFSM>();
+                foreach (PlayMakerFSM val in componentsInChildren)
+                {
+                    if (val.name == "Suspension")
+                    {
+                        suspensionStatus = val;
+                    }
+                }
+
             }
             catch (Exception)
             {
@@ -56,27 +67,13 @@ namespace SatsumaMaster
 
         public void SuspensionFix()
         {
-            PlayMakerFSM[] componentsInChildren = modParent._satsuma.GetComponentsInChildren<PlayMakerFSM>();
-            foreach (PlayMakerFSM val in componentsInChildren)
-            {
-                if (val.name == "Suspension")
-                {
-                    val.enabled = false;
-                }
-            }
+            suspensionStatus.enabled = false;
             SuspensionFixApplied = true;
         }
 
         public void RevertSuspensionFix()
         {
-            PlayMakerFSM[] componentsInChildren = modParent._satsuma.GetComponentsInChildren<PlayMakerFSM>();
-            foreach (PlayMakerFSM val in componentsInChildren)
-            {
-                if (val.name == "Suspension")
-                {
-                    val.enabled = true;
-                }
-            }
+            suspensionStatus.enabled = true;
             SuspensionFixApplied = false;
         }
 
@@ -124,10 +121,16 @@ namespace SatsumaMaster
             {
                 if (IsDirectionUp)
                 {
+                    if (suspensionStatus.enabled == true)
+                        ModConsole.Error("This feature requires a locked suspension. Press [U-lock] Suspension.");
+
                     WheelYPosition = -0.005f;
                 }
                 else
                 {
+                    if(suspensionStatus.enabled == true)
+                        ModConsole.Error("This feature requires a locked suspension. Press [U-lock] Suspension.");
+
                     if (WHEELRR.transform.localPosition.y < -0.05f)
                         WheelYPosition = 0.005f;
                     else
