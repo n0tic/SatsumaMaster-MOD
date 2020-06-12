@@ -1,6 +1,7 @@
 # SatsumaMaster
 
-Satsuma Master is a mod for a game called My Summer Car.
+Satsuma Master is a mod for a game called My Summer Car. (This is an unreleased version | 1.6)
+Project is not being actively being worked on!
 
 You can find the compiled and ready to use mod here:
 https://www.racedepartment.com/downloads/satsuma-master.27554/
