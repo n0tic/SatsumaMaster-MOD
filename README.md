@@ -29,17 +29,17 @@ https://www.racedepartment.com/downloads/satsuma-master.27554/
 # License
 Human readable license:  
 Can  
- Commercial Use  
- Modify  
- Distribute  
- Sublicense  
- Private Use  
+ *Commercial Use  
+ *Modify  
+ *Distribute  
+ *Sublicense  
+ *Private Use  
 Cannot  
- Hold Liable  
+ *Hold Liable  
 Must  
- Include Copyright  
- Include License  
- Give Credits  
+ *Include Copyright  
+ *Include License  
+ *Give Credits  
   
 MIT License
 
